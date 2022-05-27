@@ -36,7 +36,7 @@ Pas besoin d'ajouter de tests.
 Le rapport de couverture de branche de Jest indique que le fichiers suivants ne sont pas couverts (cf. copie d'écran) :
 
 ## TEST  
-🔲 composant views/Bills : Le taux de couverture est à 100% néanmoins si tu regardes le premier test il manque la mention “expect”. Ajoute cette mention pour que le test vérifie bien ce que l’on attend de lui.  
+✅ composant views/Bills : Le taux de couverture est à 100% néanmoins si tu regardes le premier test il manque la mention “expect”. Ajoute cette mention pour que le test vérifie bien ce que l’on attend de lui.  
 
 ## TEST  
 ✅ composant  views/NewBill (réalisé par Garance)  
