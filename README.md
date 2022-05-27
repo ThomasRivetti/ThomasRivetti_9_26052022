@@ -28,7 +28,7 @@ Suggestion : empêcher la saisie d'un document qui a une extension différente d
 ## Description
 Je suis connecté en tant qu'administrateur RH, je déplie une liste de tickets (par exemple : statut "validé"), je sélectionne un ticket, puis je déplie une seconde liste (par exemple : statut "refusé"), je ne peux plus sélectionner un ticket de la première liste. 
 
-🔲 Comportement attendu : pourvoir déplier plusieurs listes, et consulter les tickets de chacune des deux listes.
+✅ Comportement attendu : pourvoir déplier plusieurs listes, et consulter les tickets de chacune des deux listes.
 
 Pas besoin d'ajouter de tests.
 
