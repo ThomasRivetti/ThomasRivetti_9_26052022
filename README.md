@@ -19,8 +19,8 @@ Je suis connecté en tant qu'employé, je saisis une note de frais avec un justi
 Si je me connecte à présent en tant qu'Admin, et que je clique sur le ticket correspondant, le nom du fichier affiché est null. De même, lorsque je clique sur l'icône "voir" pour consulter le justificatif : la modale s'ouvre, mais il n'y a pas d'image.
 
 Comportements attendus :  
-🔲 la modale doit afficher l'image.  
-🔲 dans le dashboard, le formulaire correspondant au ticket doit afficher le nom du fichier.
+✅ la modale doit afficher l'image.  
+✅ dans le dashboard, le formulaire correspondant au ticket doit afficher le nom du fichier.
 
 Suggestion : empêcher la saisie d'un document qui a une extension différente de jpg, jpeg ou png au niveau du formulaire du fichier NewBill.js. Indice : cela se passe dans la méthode handleChangeFile...
 
