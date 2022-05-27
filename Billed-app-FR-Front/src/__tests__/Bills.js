@@ -4,12 +4,17 @@
 
 import {screen, waitFor} from "@testing-library/dom"
 import {toHaveClass} from "@testing-library/jest-dom"
+import userEvent from '@testing-library/user-event'
 import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
-import { ROUTES_PATH} from "../constants/routes.js";
+import { ROUTES, ROUTES_PATH} from "../constants/routes.js";
 import {localStorageMock} from "../__mocks__/localStorage.js";
+import mockStore from "../__mocks__/store"
 
 import router from "../app/Router.js";
+import Bills from "../containers/Bills.js";
+
+jest.mock("../app/store", () => mockStore);
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
@@ -36,6 +41,38 @@ describe("Given I am connected as an employee", () => {
       const antiChrono = (a, b) => ((a < b) ? 1 : +1)
       const datesSorted = [...dates].sort(antiChrono)
       expect(dates).toEqual(datesSorted)
+    })
+  })
+
+  describe("When I Click on IconEye", () => {
+      test("Then the preview modal should open", async ()=> {
+
+        Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+        window.localStorage.setItem('user', JSON.stringify({
+          type: 'Employee'
+        }))
+
+        const onNavigate = (pathname) => {
+          document.body.innerHTML = ROUTES({ pathname })
+        }
+
+        const billsEmulation = new Bills({
+          document, onNavigate, store: null, localStorage: window.localStorage
+        })
+        document.body.innerHTML = BillsUI({data: [bills[0]]})
+
+        const modale = document.getElementById('modaleFile')
+        $.fn.modal = jest.fn(() => modale.classList.add("show"))
+
+        const iconEye = screen.getByTestId('icon-eye')
+        const handleClickIconEye_1 = jest.fn(() => billsEmulation.handleClickIconEye(iconEye))
+        iconEye.addEventListener('click', handleClickIconEye_1) 
+        userEvent.click(iconEye)
+        expect(handleClickIconEye_1).toHaveBeenCalled()
+        expect(modale).toHaveClass("show")
+        
+        // await waitFor(() => screen.GetByRole('dialog'))
+        // expect(screen.getByRole('dialog')).toBeTruthy()
     })
   })
 })
