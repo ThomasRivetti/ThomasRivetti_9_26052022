@@ -44,13 +44,42 @@ describe("Given I am connected as an employee", () => {
     })
   })
 
+  describe("When i click on New Bill", () => {
+    test("Then New Bill page should open", async () => {
+       //simule la connection sur la page Employee en parametrant le localStorage
+       Object.defineProperty(window, 'localStorage', { value: localStorageMock })
+       window.localStorage.setItem('user', JSON.stringify({
+         type: 'Employee'
+       }))
+       //affiche la page des notes de frais 
+       document.body.innerHTML = BillsUI({data: [bills[0]]})
+       //récupération bouton 
+       const btnNewBill = screen.getByTestId('btn-new-bill')
+       //recuperation instance class Bills
+       const onNavigate = (pathname) => document.body.innerHTML = ROUTES({ pathname })
+       const billsEmulation = new Bills({document, onNavigate, store: null, localStorage: window.localStorage})
+       const handleClickNewBill = jest.fn(()=> billsEmulation.onNavigate(ROUTES_PATH['NewBill']))
+       //eventListener du bouton
+       btnNewBill.addEventListener('click', handleClickNewBill)
+       userEvent.click(btnNewBill)
+       //vérifie que le clic est bien écouté
+       expect(handleClickNewBill).toHaveBeenCalled()
+       //vérifie que la page est bien ouverte sur le NewBill
+       await waitFor(() => screen.getByTestId('form-new-bill'))
+       expect(screen.getByTestId('form-new-bill')).toBeTruthy()
+
+    })
+  })
+
   describe("When I Click on IconEye", () => {
       test("Then the preview modal should open", async ()=> {
-
+        //simule la connection sur la page Employee en parametrant le localStorage
         Object.defineProperty(window, 'localStorage', { value: localStorageMock })
         window.localStorage.setItem('user', JSON.stringify({
           type: 'Employee'
         }))
+        //affiche la page des notes de frais 
+        document.body.innerHTML = BillsUI({data: [bills[0]]})
 
         const onNavigate = (pathname) => {
           document.body.innerHTML = ROUTES({ pathname })
@@ -59,7 +88,6 @@ describe("Given I am connected as an employee", () => {
         const billsEmulation = new Bills({
           document, onNavigate, store: null, localStorage: window.localStorage
         })
-        document.body.innerHTML = BillsUI({data: [bills[0]]})
 
         const modale = document.getElementById('modaleFile')
         $.fn.modal = jest.fn(() => modale.classList.add("show"))
@@ -70,9 +98,6 @@ describe("Given I am connected as an employee", () => {
         userEvent.click(iconEye)
         expect(handleClickIconEye_1).toHaveBeenCalled()
         expect(modale).toHaveClass("show")
-        
-        // await waitFor(() => screen.GetByRole('dialog'))
-        // expect(screen.getByRole('dialog')).toBeTruthy()
     })
   })
 })

@@ -43,7 +43,8 @@ Le rapport de couverture de branche de Jest indique que le fichiers suivants ne 
 
 ## TEST  
 🔲 composant container/Bills :  
-    ✅ couvrir les tests Bills : clic sur l'icone Oeil 
+    ✅ couvrir les tests U Bills : clic sur l'icone Oeil 
+    ✅ couvrir les tests U Bills : clic sur nouvelle note de frais 
 
     🔲 couvrir un maximum de  "statements" c'est simple, il faut qu’après avoir ajouté tes tests unitaires et d’intégration (le rapport de couverture du fichier container/Bills( http://127.0.0.1:8080/coverage/lcov-report/containers/Bills.js.html )) soit vert. Cela devrait permettre d'obtenir un taux de couverture aux alentours de 80% dans la colonne "statements".  
     🔲 ajouter un test d'intégration GET Bills. Tu peux t'inspirer de celui qui est fait (signalé en commentaires) pour Dashboard.
