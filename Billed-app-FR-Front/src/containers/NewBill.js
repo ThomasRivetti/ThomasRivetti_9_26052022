@@ -43,8 +43,6 @@ export default class NewBill {
       e.target.value =null;
       alert("Only jpg/jpeg and png files are allowed!");
     }
-
-
   }
   handleSubmit = e => {
     e.preventDefault()
@@ -64,8 +62,7 @@ export default class NewBill {
       status: 'pending'
     }
     this.updateBill(bill)
-    //contenu dans updateBill: nettoyage?
-    this.onNavigate(ROUTES_PATH['Bills'])
+    //this.onNavigate(ROUTES_PATH['Bills'])
   }
 
   // not need to cover this function by tests
