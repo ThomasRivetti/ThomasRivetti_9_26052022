@@ -64,6 +64,7 @@ export default class NewBill {
       status: 'pending'
     }
     this.updateBill(bill)
+    //contenu dans updateBill: nettoyage?
     this.onNavigate(ROUTES_PATH['Bills'])
   }
 
