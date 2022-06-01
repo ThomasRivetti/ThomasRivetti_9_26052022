@@ -42,17 +42,17 @@ Le rapport de couverture de branche de Jest indique que le fichiers suivants ne 
 ✅ composant  views/NewBill (réalisé par Garance)  
 
 ## TEST  
-🔲 composant container/Bills :  
+✅ composant container/Bills :  
     ✅ couvrir les tests U Bills : clic sur l'icone Oeil 
     ✅ couvrir les tests U Bills : clic sur nouvelle note de frais 
 
-    🔲 couvrir un maximum de  "statements" c'est simple, il faut qu’après avoir ajouté tes tests unitaires et d’intégration (le rapport de couverture du fichier container/Bills( http://127.0.0.1:8080/coverage/lcov-report/containers/Bills.js.html )) soit vert. Cela devrait permettre d'obtenir un taux de couverture aux alentours de 80% dans la colonne "statements".  
-    🔲 ajouter un test d'intégration GET Bills. Tu peux t'inspirer de celui qui est fait (signalé en commentaires) pour Dashboard.
+    ✅ couvrir un maximum de  "statements" c'est simple, il faut qu’après avoir ajouté tes tests unitaires et d’intégration (le rapport de couverture du fichier container/Bills( http://127.0.0.1:8080/coverage/lcov-report/containers/Bills.js.html )) soit vert. Cela devrait permettre d'obtenir un taux de couverture aux alentours de 80% dans la colonne "statements".  
+    ✅ ajouter un test d'intégration GET Bills. Tu peux t'inspirer de celui qui est fait (signalé en commentaires) pour Dashboard.
 
 ## TEST     
 🔲 composant container/NewBill : 
     ✅ couvrir tests U NewBill : verification du type de fichier en FILE  
-    🔲 couvrir un maximum de "statements" : c'est simple, il faut que le rapport de couverture du fichier container/NewBill soit vert (accessible à cette adresse( http://127.0.0.1:8080/coverage/lcov-report/containers/NewBill.js.html ) quand tu auras lancé le serveur). Cela devrait permettre d'obtenir un taux de couverture aux alentours de 80% dans la colonne "statements".    
+    ✅ couvrir un maximum de "statements" : c'est simple, il faut que le rapport de couverture du fichier container/NewBill soit vert (accessible à cette adresse( http://127.0.0.1:8080/coverage/lcov-report/containers/NewBill.js.html ) quand tu auras lancé le serveur). Cela devrait permettre d'obtenir un taux de couverture aux alentours de 80% dans la colonne "statements".    
     🔲 ajouter un test d'intégration POST new bill.  
     ✅ composant views/VerticalLayout (réalisé par Garance) 
 
