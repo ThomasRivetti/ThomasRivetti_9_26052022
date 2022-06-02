@@ -1,4 +1,4 @@
-import { ROUTES_PATH } from '../constants/routes.js'
+import { ROUTES, ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
 
 export default class NewBill {
@@ -38,7 +38,9 @@ export default class NewBill {
           this.billId = key
           this.fileUrl = filePath
           this.fileName = fileName
-        }).catch(error => console.error(error))
+        }).catch(error => {
+          this.document.body.innerHTML = ROUTES({ pathname: ROUTES_PATH.Bills, error })
+        })
     } else {
       e.target.value = null;
       alert("Only jpg/jpeg and png files are allowed!");
