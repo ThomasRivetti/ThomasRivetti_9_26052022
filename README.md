@@ -60,5 +60,5 @@ Respecter la structure des tests unitaires en place : Given  / When / Then avec 
 
 # Parcours Employé
 
-🔲 Rédiger un plan de test E2E pour le parcours *employé*. Ce plan doit comprendre l'ensemble des scenarios possibles et doit respecter le format habituel.
+✅ Rédiger un plan de test E2E pour le parcours *employé*. Ce plan doit comprendre l'ensemble des scenarios possibles et doit respecter le format habituel.
 ( https://course.oc-static.com/projects/DA+JSR_P9/Billed+-+Description+pratique+des+besoins+-.pdf )
